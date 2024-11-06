@@ -8,19 +8,19 @@ import Box from '@mui/material/Box';
 
 const cards = [
   {
-    title: 'Anura kumara',
-    image: '/anura-kumara-dissanayake-2.jpg', // Relative path from the public folder
-    // description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.',
+    title: 'Anura Kumara',
+    image: '/ranil-700.j', // Ensure this is in the public folder
+    description: 'Current President of Sri Lanka.', // Example description
   },
   {
-    title: 'Sajith',
-    image: '/Sajith-Premadasa (1).jpg', // Placeholder image, assuming it's added in the public folder
-    // description: 'Snakes are elongated, legless, carnivorous reptiles of the suborder Serpentes.',
+    title: 'Sajith Premadasa',
+    image: '/Sajith-Premadasa (1).jpg',
+    description: 'A notable political figure in Sri Lanka.',
   },
   {
-    title: 'Ranil',
+    title: 'Ranil Wickremesinghe',
     image: '/ranil-700.jpg',
-    // description: 'Frogs are amphibians in the order Anura, known for their jumping abilities, croaking sounds, and slimy skin.',
+    description: 'An influential leader in Sri Lankan politics.',
   },
 ];
 
@@ -32,18 +32,20 @@ export default function ScrollCard() {
           <CardActionArea>
             <CardMedia
               component="img"
-              height="90%"
+              height="140" // Set a height for consistent display
               image={card.image}
               alt={card.title}
-              sx={{ objectFit: 'cover' }} // Ensure the image covers the area
+              sx={{ objectFit: 'cover' }}
             />
-            <CardContent sx={{ display: 'flex', flexDirection: 'column', height: 100 }}> {/* Fixed height for content */}
+            <CardContent sx={{ display: 'flex', flexDirection: 'column', height: 100 }}>
               <Typography gutterBottom variant="h5" component="div" sx={{ flexGrow: 1 }}>
                 {card.title}
               </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {card.description}
-              </Typography>
+              {card.description && (
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  {card.description}
+                </Typography>
+              )}
             </CardContent>
           </CardActionArea>
         </Card>

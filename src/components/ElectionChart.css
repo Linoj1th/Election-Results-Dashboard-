@@ -1,0 +1,53 @@
+/* .election-chart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 800px) {
+    .chart-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .election-chart-container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .chart-wrapper {
+        width: 250%;
+        transform: scale(1.1);
+        transform-origin: center;
+        height: 250px;
+    }
+}
+
+.chart-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+} */
