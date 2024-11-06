@@ -8,14 +8,18 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
+    padding: theme.spacing(1), // Reduced padding for compactness
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: '0.875rem', // Smaller font size
+    padding: theme.spacing(0.5), // Reduced padding for body cells
   },
 }));
 
@@ -40,17 +44,27 @@ const rows = [
 ];
 
 export default function Tables() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
-    <Box sx={{ px: 8, py: 5 }}> {/* Add padding on both sides and top/bottom */}
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 500 }} aria-label="customized table">
+    <Box
+      sx={{
+        px: { xs: 2, sm: 5, md: 8 },
+        py: 5,
+        overflowX: 'auto',
+        maxWidth: '100%', // Ensure the table container doesn’t exceed the viewport width
+      }}
+    >
+      <TableContainer component={Paper} sx={{ maxWidth: 600, margin: '0 auto' }}> {/* Limit table width */}
+        <Table sx={{ minWidth: isMobile ? 300 : 500 }} aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell>Election (2024)</StyledTableCell>
               <StyledTableCell align="right">Registered Electors</StyledTableCell>
               <StyledTableCell align="right">Total Polled Votes</StyledTableCell>
-              <StyledTableCell align="right">Total Valid Votes</StyledTableCell>
-              <StyledTableCell align="right">Total Rejected Votes</StyledTableCell>
+              {!isMobile && <StyledTableCell align="right">Valid Votes</StyledTableCell>}
+              {!isMobile && <StyledTableCell align="right">Rejected Votes</StyledTableCell>}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -61,8 +75,8 @@ export default function Tables() {
                 </StyledTableCell>
                 <StyledTableCell align="right">{row.registeredElectors}</StyledTableCell>
                 <StyledTableCell align="right">{row.totalPolledVotes}</StyledTableCell>
-                <StyledTableCell align="right">{row.totalValidVotes}</StyledTableCell>
-                <StyledTableCell align="right">{row.totalRejectedVotes}</StyledTableCell>
+                {!isMobile && <StyledTableCell align="right">{row.totalValidVotes}</StyledTableCell>}
+                {!isMobile && <StyledTableCell align="right">{row.totalRejectedVotes}</StyledTableCell>}
               </StyledTableRow>
             ))}
           </TableBody>
