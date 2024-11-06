@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Election-Results-Dashboard-/static/css/main.e6c13ad2.css",
-    "main.js": "/Election-Results-Dashboard-/static/js/main.df2445fc.js",
+    "main.js": "/Election-Results-Dashboard-/static/js/main.a62b47c8.js",
     "static/js/453.0157a570.chunk.js": "/Election-Results-Dashboard-/static/js/453.0157a570.chunk.js",
     "index.html": "/Election-Results-Dashboard-/index.html",
     "main.e6c13ad2.css.map": "/Election-Results-Dashboard-/static/css/main.e6c13ad2.css.map",
-    "main.df2445fc.js.map": "/Election-Results-Dashboard-/static/js/main.df2445fc.js.map",
+    "main.a62b47c8.js.map": "/Election-Results-Dashboard-/static/js/main.a62b47c8.js.map",
     "453.0157a570.chunk.js.map": "/Election-Results-Dashboard-/static/js/453.0157a570.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.df2445fc.js"
+    "static/js/main.a62b47c8.js"
   ]
 }
